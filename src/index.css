@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap');
+
 body {
   margin: 0;
   padding: 0;
-  background-color: black;
-  color: aliceblue;
+  background-color: aliceblue;
+  color: black;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 4vw;
 }
 span,
 p,
@@ -10,16 +14,147 @@ h1,
 ul,
 li,
 h4,
-h2 {
+h2,
+button {
   margin: 0;
   padding: 0;
+  font-family: 'Ubuntu', sans-serif;
   list-style: none;
 }
 .container {
-  background-color: red;
-  padding: 5px;
+  height: 97.8vh;
 }
-.header{
-    display: flex;
-    
+.not-supported{
+  display: none;
+}
+
+/* header */
+.header {
+  display: flex;
+  margin: 2vh 2vw;
+  height: 13vh;
+  padding: 1vw 2vw;
+  border-radius: 0.3rem;
+  color: #fad0c9ff;
+  background-color: #6e6e6dff;
+}
+.header-logo {
+  font-size: 10vw;
+}
+.light-btn {
+  padding: 1.5vh 4vw;
+  border: 0;
+  outline: none;
+  background-color: #fad0c9ff;
+  color: #6e6e6dff;
+  border-radius: 0.2rem;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.display-content {
+  margin-left: 2vw;
+  width: 65vw;
+}
+.game-control {
+  display: flex;
+  justify-content: center;
+}
+
+/* scoreboard */
+.score-board {
+  display: flex;
+  padding: 0.8vh;
+  justify-content: center;
+}
+.score {
+  width: 50%;
+  text-align: center;
+  padding: 0.3vh;
+  margin: 0.2vh;
+  border-radius: 0.3rem;
+  background-color: #fae6e2;
+  color: #6e6e6dff;
+}
+
+/* grid */
+.grid {
+  height: 50vh;
+  display: grid;
+  margin: 7vh 2vw 0 2vw;
+  padding: 1vh 2vw;
+  border-radius: 0.3rem;
+  background-color: #fad0c9ff;
+  grid-template-columns: auto auto auto auto;
+}
+.square {
+  display: flex;
+  margin: 0.2rem;
+  border-radius: 0.2rem;
+  align-items: center;
+  justify-content: center;
+  background-color: #fae6e2;
+  font-size: 5vh;
+  color: #6e6e6dff;
+}
+
+/* moves section */
+.moves {
+  margin: 2vh 4vw;
+  color: #6e6e6dff;
+}
+
+/* multiple colors for the squares */
+.color-4 {
+  background-color: #101820ff;
+  color: #fee715ff;
+}
+.color-8 {
+  background-color: #e0c568ff;
+  color: #d198c5ff;
+}
+.color-16 {
+  background-color: #00539cff;
+  color: #eea47fff;
+}
+.color-32 {
+  background-color: #2c5f2d;
+  color: #97bc62ff;
+}
+.color-64 {
+  background-color: #606060ff;
+  color: #d6ed17ff;
+}
+.color-128 {
+  background-color: #00203fff;
+  color: #adefd1ff;
+}
+.color-256 {
+  background-color: #000000ff;
+  color: #ffffffff;
+}
+.color-512 {
+  background-color: #5f4b8bff;
+  color: #e69a8dff;
+}
+.color-1024 {
+  background-color: #fc766aff;
+  color: #5b84b1ff;
+}
+.color-2048 {
+  background-color: #6e6e6dff;
+  color: #fad0c9ff;
+}
+
+/* message */
+.message {
+  background-color: LightCoral;
+  color: black;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  padding: 10px;
+  font-size: 13px;
 }
