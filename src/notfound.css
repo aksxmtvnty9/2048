@@ -1,0 +1,10 @@
+body{
+    background-color: black;
+}
+.not-supported{
+    color: lightgreen;
+    font-size: 20px;
+}
+.container {
+  display: none;
+}

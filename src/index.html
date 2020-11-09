@@ -6,32 +6,50 @@
     <title>Lets play 2048!</title>
     <link
       rel="stylesheet"
-      media="screen and (max-width: 414px)"
+      media="screen and (max-width: 435px)"
       href="index.css"
     />
-    <!-- <link rel="stylesheet" media="screen and (min-width: 900px)" type="text/css" href="style.css"/> -->
+    <link
+      rel="stylesheet"
+      media="screen and (min-width: 436px)"
+      type="text/css"
+      href="notfound.css"
+    />
   </head>
   <body>
+    <p class="not-supported">Not supported Yet</p>
     <div class="container">
       <div class="header">
-        <div id="logo">
+        <div class="logo">
           <p class="header-logo">2048</p>
         </div>
-        <div class="score-board">
-          <div class="score">
-            <p>Score&nbsp;</p>
-            <p>9876543</p>
+
+        <div class="display-content">
+          <div class="score-board">
+            <div class="score">
+              <p>Score</p>
+              <p id="current-score"></p>
+            </div>
+            <div class="score">
+              <p>Best score</p>
+              <p id="best-score"></p>
+            </div>
           </div>
-          <div class="score">
-            <p>Best&nbsp;&nbsp;&nbsp;</p>
-            <p>0</p>
+
+          <div class="game-control">
+            <button id="new-game" class="light-btn">New game</button>
           </div>
-        </div>
-        <div id="game-control">
-          <button class="light-btn">New game</button>
         </div>
       </div>
-      <div class="grid"></div>
+
+      <div id="grid" class="grid"></div>
+      <div class="moves">
+        <p id="moves"></p>
+      </div>
+      <div class="message">
+        This game is under development for mobile swipes, for now please try to use the inspect from web browser, thanks.
+      </div>
+      <!-- <a href="http://anushkumar629.netlify.app/">Anush kumar N</a> -->
     </div>
     <script src="index.js"></script>
   </body>
