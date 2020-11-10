@@ -206,7 +206,7 @@ const combineCol = () => {
 
 const checkForWin = () => {
   for (let i = 0; i < row * row - 1; i++) {
-    if (squares[i].innerHTML === 2048) {
+    if (squares[i].innerHTML == 2048) {
       alert('YOU WIN !!')
       createAgain()
     }
