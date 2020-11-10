@@ -1,4 +1,5 @@
 const displayGrid = document.querySelector('#grid')
+const container = document.querySelector('#container')
 const currentScore = document.querySelector('#current-score')
 const bestScore = document.querySelector('#best-score')
 const newGame = document.querySelector('#new-game')
@@ -7,6 +8,15 @@ const row = 4
 let squares = []
 const className = 'color-'
 let numberOfMoves = 0
+
+// Create a manager to manager the element
+var hammerManager = new Hammer.Manager(container, {
+  recognizers: [[Hammer.Swipe, { direction: Hammer.DIRECTION_ALL }]],
+})
+// Create a recognizer
+var swipe = new Hammer.Swipe()
+// Add the recognizer to the manager
+hammerManager.add(swipe)
 
 // init the game
 const initGame = () => {
@@ -33,8 +43,8 @@ const fillSquare = () => {
   const randomNumber = Math.floor(Math.random() * squares.length)
   if (squares[randomNumber].innerHTML == 0) {
     squares[randomNumber].innerHTML = 2
-    checkGameOver()
-    return
+    const isGameOver = checkGameOver()
+    if (isGameOver) return true
   } else {
     fillSquare()
   }
@@ -50,9 +60,8 @@ const checkGameOver = () => {
   }
   if (zeros === 0) {
     alert('GAME OVER')
-    // setTimeout(() => {
     createAgain()
-    // }, 3000)
+    return true
   }
 }
 
@@ -71,6 +80,7 @@ const createAgain = () => {
 newGame.addEventListener('click', () => {
   alert('Do you want to start again ?')
   createAgain()
+  bestScore.innerHTML = 0
 })
 
 // Traverse right
@@ -198,9 +208,7 @@ const checkForWin = () => {
   for (let i = 0; i < row * row - 1; i++) {
     if (squares[i].innerHTML === 2048) {
       alert('YOU WIN !!')
-      //   setTimeout(() => {
       createAgain()
-      //   }, 3000)
     }
   }
 }
@@ -218,16 +226,6 @@ const gameContoller = (event) => {
   }
   if (event.keyCode === 40) {
     controlDown()
-  }
-  if (
-    event.keyCode === 37 ||
-    event.keyCode === 38 ||
-    event.keyCode === 39 ||
-    event.keyCode === 40
-  ) {
-    checkColorChange()
-    increaseNumberofMoves()
-    addPoints()
   }
 }
 
@@ -259,12 +257,18 @@ const addPoints = () => {
 // Add listner for key press
 document.addEventListener('keyup', gameContoller)
 
+const setGameInteraction = () => {
+  checkColorChange()
+  increaseNumberofMoves()
+  addPoints()
+}
+
 // Contol the right arrow
 const controlRight = () => {
   traverseRight()
   combineRow()
   traverseRight()
-  fillSquare()
+  fillSquare() || setGameInteraction()
 }
 
 // Control the left arrow
@@ -272,7 +276,7 @@ const controlLeft = () => {
   traverseLeft()
   combineRow()
   traverseLeft()
-  fillSquare()
+  fillSquare() || setGameInteraction()
 }
 
 // Contol the right arrow
@@ -280,7 +284,7 @@ const controlUp = () => {
   traverseUp()
   combineCol()
   traverseUp()
-  fillSquare()
+  fillSquare() || setGameInteraction()
 }
 
 // Control the left arrow
@@ -288,7 +292,21 @@ const controlDown = () => {
   traverseDown()
   combineCol()
   traverseDown()
-  fillSquare()
+  fillSquare() || setGameInteraction()
 }
+
+// Subscribe to a desired event
+hammerManager.on('swipe', function (e) {
+  const direction = e.offsetDirection
+  if (direction === 2) {
+    controlLeft()
+  } else if (direction === 4) {
+    controlRight()
+  } else if (direction === 8) {
+    controlUp()
+  } else if (direction === 16) {
+    controlDown()
+  }
+})
 
 initGame()
