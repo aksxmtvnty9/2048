@@ -17,8 +17,12 @@
     />
   </head>
   <body>
-    <p class="not-supported">Not supported Yet</p>
-    <div class="container">
+    <p class="not-supported">
+      2048<br/>
+      Not supported Yet.<br />NOTE: If you are using desktop and know about web
+      browser, try to use the inspect option and enjoy the game using swipe or arrow keys.
+    </p>
+    <div id="container" class="container">
       <div class="header">
         <div class="logo">
           <p class="header-logo">2048</p>
@@ -47,10 +51,15 @@
         <p id="moves"></p>
       </div>
       <div class="message">
-        This game is under development for mobile swipes, for now please try to use the inspect from web browser, thanks.
+        This game is still under development and not available for desktop,
+        thanks.
       </div>
-      <!-- <a href="http://anushkumar629.netlify.app/">Anush kumar N</a> -->
+      <span class="my-name">
+        <p>Made with 💙 by</p>
+        <a href="http://anushkumar629.netlify.app/">Anush kumar N</a>
+      </span>
     </div>
+    <script src="hammer.min.js"></script>
     <script src="index.js"></script>
   </body>
 </html>
