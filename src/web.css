@@ -118,6 +118,10 @@ button {
 }
 
 /* multiple colors for the squares */
+.color-2 {
+  background-color: #557a95;
+  color: #b1a296;
+}
 .color-4 {
   background-color: #101820ff;
   color: #fee715ff;
