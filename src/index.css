@@ -27,9 +27,6 @@ button {
 .container {
   height: 97.8vh;
 }
-.not-supported {
-  display: none;
-}
 
 /* header */
 .header {
