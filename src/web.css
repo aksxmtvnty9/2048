@@ -3,10 +3,15 @@
 body {
   margin: 0;
   padding: 0;
+  height: 100vh;
+  width: 100vw;
   background-color: aliceblue;
   color: #6e6e6dff;
   font-family: 'Ubuntu', sans-serif;
-  font-size: 4vw;
+  font-size: 1.1vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 span,
 a,
@@ -25,27 +30,31 @@ button {
   color: #6e6e6dff;
 }
 .container {
-  height: 97.8vh;
+  height: 89vh;
+  width: 32vw;
+  border: 3px solid #6e6e6dff;
+  border-radius: 5px;
 }
 
 /* header */
 .header {
   display: flex;
   margin: 2vh 2vw;
-  height: 13vh;
-  padding: 1vw 2vw;
+  height: 11vh;
+  padding: 0.8vw 2vw;
   border-radius: 0.3rem;
   color: #fad0c9ff;
   background-color: #6e6e6dff;
 }
 .header-logo {
-  font-size: 10vw;
+  font-size: 4.5vw;
   color: #fad0c9ff;
 }
 .light-btn {
-  padding: 1.5vh 4vw;
+  padding: 1.5vh 2.5vw;
   border: 0;
   outline: none;
+  height: 5vh;
   background-color: #fad0c9ff;
   color: #6e6e6dff;
   border-radius: 0.2rem;
@@ -67,14 +76,15 @@ button {
 /* scoreboard */
 .score-board {
   display: flex;
-  padding: 0.8vh;
+  padding: 0.1vh;
   justify-content: center;
+  font-size: 1vw;
 }
 .score {
   width: 50%;
   text-align: center;
   padding: 0.3vh;
-  margin: 0.2vh;
+  margin: 0.5vh;
   border-radius: 0.3rem;
   background-color: #fae6e2;
   color: #6e6e6dff;
@@ -85,7 +95,7 @@ button {
   height: 50vh;
   display: grid;
   margin: 7vh 2vw 0 2vw;
-  padding: 1vh 2vw;
+  padding: 1vh 0.5vw;
   border-radius: 0.3rem;
   background-color: #fad0c9ff;
   grid-template-columns: auto auto auto auto;
@@ -103,7 +113,7 @@ button {
 
 /* moves section */
 .moves {
-  margin: 2vh 4vw;
+  margin: 1vh 2vw;
   color: #6e6e6dff;
 }
 
@@ -155,12 +165,12 @@ button {
   color: black;
   position: absolute;
   z-index: 1;
-  bottom: 0;
   text-align: center;
   left: 0;
   right: 0;
+  bottom: 0;
   padding: 10px;
-  font-size: 13px;
+  font-size: 1vw;
 }
 
 /* my name */
@@ -168,8 +178,11 @@ button {
   padding: 0;
   display: flex;
   position: absolute;
-  top: 85vh;
-  left: 28vw;
-  font-size: 3vw;
+  top: 90vh;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  justify-content: center;
+  font-size: 0.9vw;
   opacity: 0.5;
 }
