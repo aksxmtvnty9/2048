@@ -43,6 +43,7 @@ const fillSquare = () => {
   const randomNumber = Math.floor(Math.random() * squares.length)
   if (squares[randomNumber].innerHTML == 0) {
     squares[randomNumber].innerHTML = 2
+    checkColorChange()
     const isGameOver = checkGameOver()
     if (isGameOver) return true
   } else {
