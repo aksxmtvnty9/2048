@@ -159,6 +159,9 @@ button {
   position: absolute;
   z-index: 1;
   bottom: 0;
+  text-align: center;
+  left: 0;
+  right: 0;
   padding: 10px;
   font-size: 13px;
 }
@@ -172,8 +175,4 @@ button {
   left: 28vw;
   font-size: 3vw;
   opacity: 0.5;
-}
-.my-name a{
-  padding: calc(1.5vh - 1.85vw);
-  font-style: italic;
 }
