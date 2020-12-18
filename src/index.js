@@ -232,7 +232,7 @@ const gameContoller = (event) => {
 // check and change the color of the squares
 const checkColorChange = () => {
   for (let i = 0; i < row * row; i++) {
-    if (squares[i].innerHTML > 2) {
+    if (squares[i].innerHTML >= 2) {
       squares[i].className = ''
       let classNames = ['square', `${className}${squares[i].innerHTML}`]
       squares[i].classList.add(...classNames)
