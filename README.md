@@ -1,6 +1,5 @@
 # 2048
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b2fb4e40-4802-43c9-b17e-ca601a8f9967/deploy-status)](https://app.netlify.com/sites/2048-anush/deploys)
 
 dev note: I'm not actively fixing bugs in this project, I just made this project for fun
 
